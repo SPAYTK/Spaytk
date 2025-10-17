@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+# Gradle wrapper script
+# This script is used to invoke the Gradle build tool.
+
+set -e
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+APP_NAME="$(basename "$DIR")"
+
+# Determine the location of the Gradle wrapper jar
+if [ -z "$GRADLE_HOME" ]; then
+  GRADLE_HOME="$DIR/gradle/wrapper"
+fi
+
+# Execute the Gradle wrapper
+exec "$GRADLE_HOME/gradle-wrapper.jar" "$@"
